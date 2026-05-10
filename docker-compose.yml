@@ -1,0 +1,15 @@
+services:
+  appdaemon:
+    container_name: appdaemon
+    image: acouch/appdaemon:latest
+    restart: unless-stopped
+    # Install dependencies before starting AppDaemon
+    command: >
+      bash -c "pip3 install huawei-lte-api requests && appdaemon"
+    environment:
+      - HA_URL=http://192.168.1.XX:8123
+      - DASH_URL=http://192.168.1.XX:5050
+    volumes:
+      - ./config:/conf
+    ports:
+      - "5050:5050"

@@ -1,0 +1,14 @@
+# Example SMTP Notification configuration for Home Assistant
+notify:
+  - name: "notifier_smtp_sms_gateway"
+    platform: smtp
+    server: "mail.example.com"
+    port: 587
+    timeout: 15
+    sender: "hass@example.com"
+    encryption: starttls
+    username: "hass@example.com"
+    password: "your_email_password"
+    recipient:
+      - "admin@example.com"
+    sender_name: "Huawei SMS Gateway"

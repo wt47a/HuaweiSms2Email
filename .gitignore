@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# AppDaemon
+secrets.yaml
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.env
+
+# VSS
+.vscode

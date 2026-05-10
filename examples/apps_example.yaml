@@ -1,0 +1,16 @@
+# Example instance of the SMS forwarder
+sms_router_home:
+  module: sms_to_ha_email
+  class: SmsToHaEmail
+  base_address: "192.168.8.1"
+  username: "admin"
+  password: "your_router_password"
+  interval: 60
+  batch_size: 5
+  notifier_name: "notifier_smtp_sms_gateway"
+  # proxy_url: "http://192.168.1.50:8888" # Optional
+  title_template: "[SMS] From: {sender}"
+  body_template: |
+    Date: {date}
+    From: {sender}
+    Message: {content}
